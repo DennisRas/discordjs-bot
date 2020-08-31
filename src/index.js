@@ -5,6 +5,7 @@ const Discord = require("discord.js");
 
 const prefix = process.env.COMMAND_PREFIX;
 const client = new Discord.Client();
+
 client.commands = new Discord.Collection();
 client.cooldowns = new Discord.Collection();
 
@@ -20,7 +21,6 @@ client.once("ready", () => {
   console.log("Ready!");
 });
 
-console.log("token", process.env.DISCORD_TOKEN);
 client.login(process.env.DISCORD_TOKEN);
 
 client.on("message", (message) => {
@@ -60,9 +60,11 @@ client.on("message", (message) => {
 
   if (command.args && !args.length) {
     let reply = `You didn't provide any arguments, ${message.author}!`;
+
     if (command.usage) {
       reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
     }
+
     return message.channel.send(reply);
   }
 

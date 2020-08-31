@@ -25,7 +25,7 @@ module.exports = {
           message.reply("it seems like I can't DM you! Do you have DMs disabled?");
         });
     }
-    // ...
+
     const name = args[0].toLowerCase();
     const command = commands.get(name) || commands.find((c) => c.aliases && c.aliases.includes(name));
 
