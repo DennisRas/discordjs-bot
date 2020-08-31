@@ -20,7 +20,9 @@
   "homepage": "https://github.com/DennisRas/discordjs-bot#readme",
   "dependencies": {
     "discord.js": "^12.3.1",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "sequelize": "^6.3.4",
+    "sqlite3": "^5.0.0"
   },
   "devDependencies": {
     "eslint": "^7.7.0",

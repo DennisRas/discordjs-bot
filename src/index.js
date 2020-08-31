@@ -2,6 +2,7 @@ require("dotenv").config();
 const fs = require("fs");
 const path = require("path");
 const Discord = require("discord.js");
+const DB = require("./database");
 
 const prefix = process.env.COMMAND_PREFIX;
 const client = new Discord.Client();
@@ -18,6 +19,7 @@ for (const file of commandFiles) {
 }
 
 client.once("ready", () => {
+  DB.sync();
   console.log("Ready!");
 });
 
